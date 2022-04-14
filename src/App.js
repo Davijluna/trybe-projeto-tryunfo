@@ -15,10 +15,10 @@ class App extends React.Component {
       cardImage: '',
       cardRare: '',
       cardTrunfo: false,
-      isSaveButtonDisabled: false,
+      isSaveButtonDisabled: true,
     };
-    this.onInputChange = this.onInputChange(this);
-    this.onSaveButtonClick = this.onSaveButtonClick(this);
+    this.onInputChange = this.onInputChange.bind(this);
+    this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
   }
 
   onInputChange({ target }) {
@@ -57,7 +57,7 @@ class App extends React.Component {
           cardAttr3={ cardAttr3 }
           cardTrunfo={ cardTrunfo }
           isSaveButtonDisabled={ isSaveButtonDisabled }
-          ca
+          onInputChange={ this.onInputChange }
         />
         <Card
           ardName={ cardName }
