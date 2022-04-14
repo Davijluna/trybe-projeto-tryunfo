@@ -47,8 +47,28 @@ class App extends React.Component {
     return (
       <div>
         <h1>Tryunfo </h1>
-        <Form />
-        <Card />
+        <Form
+          cardName={ cardName }
+          cardImage={ cardImage }
+          cardRare={ cardRare }
+          cardDescription={ cardDescription }
+          cardAttr1={ cardAttr1 }
+          cardAttr2={ cardAttr2 }
+          cardAttr3={ cardAttr3 }
+          cardTrunfo={ cardTrunfo }
+          isSaveButtonDisabled={ isSaveButtonDisabled }
+          ca
+        />
+        <Card
+          ardName={ cardName }
+          cardDescription={ cardDescription }
+          cardAttr1={ cardAttr1 }
+          cardAttr2={ cardAttr2 }
+          cardAttr3={ cardAttr3 }
+          cardImage={ cardImage }
+          cardRare={ cardRare }
+          cardTrunfo={ cardTrunfo }
+        />
       </div>
     );
   }
