@@ -16,7 +16,7 @@ class App extends React.Component {
       cardRare: '',
       cardTrunfo: '',
       hasTrunfo: false,
-      isSaveButtonDisabled: false,
+      isSaveButtonDisabled: true,
       onSaveButtonClick: '',
     };
     this.onInputChange = this.onInputChange.bind(this);
@@ -29,10 +29,39 @@ class App extends React.Component {
     this.setState(
       () => ({ [name]: value }),
     );
+    this.setState({ [name]: value }, () => this.checagem());
   }
 
   onSaveButtonClick() {
     console.log('oi');
+  }
+
+  checagem() {
+    const {
+      cardName,
+      cardDescription,
+      cardImage,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardRare,
+    } = this.state;
+
+    const totalDecardes = 210;
+    const maxPraCada = 90;
+    if (cardName.length > 0
+     && cardDescription.length > 0
+     && cardImage.length > 0
+     && cardRare.length > 0
+     && Number(cardAttr1) + Number(cardAttr2) + Number(cardAttr3) <= totalDecardes
+     && Number(cardAttr1) >= 0 && Number(cardAttr1) <= maxPraCada
+     && Number(cardAttr2) >= 0 && Number(cardAttr2) <= maxPraCada
+     && Number(cardAttr3) >= 0 && Number(cardAttr3) <= maxPraCada
+    ) {
+      this.setState({ isSaveButtonDisabled: false });
+    } else {
+      this.setState({ isSaveButtonDisabled: true });
+    }
   }
 
   render() {
