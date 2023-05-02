@@ -8,7 +8,7 @@ class App extends React.Component {
     super();
     this.state = {
       save: [],
-      inputValue: ' macete',
+      inputValue: 'macete',
       cardDescription: '',
       cardAttr1: '',
       cardAttr2: '',
@@ -88,8 +88,8 @@ class App extends React.Component {
   render() {
     const {
       inputValue, cardDescription, cardAttr1, cardAttr2,
-      cardAttr3, cardImage, cardRare, hasTrunfo, cardTrunfo } = this.state;
-    const { save } = this.state;
+      cardAttr3, cardImage, cardRare, hasTrunfo, cardTrunfo, save } = this.state;
+    // const { save } = this.state;
     return (
       <main>
         <div className="container">
